@@ -17,11 +17,11 @@ This repository includes:
 
 If your system has winget installed you can directly use the script "Winget-QuickWins-InstallSoftware.bat" (and if it isn't installed but you want to have it, the chocolatey script from the next section can install it for you).
 
-> **Here is a one-liner** to download and install only *chocolatey* and *git* 
+> **Here is a one-liner** to download and install only *chocolatey* and *git*, and to clone this repository
 ```Batch  
-cd %USERPROFILE% && curl https://raw.githubusercontent.com/JCab3X/quick-wins-setup/main/Winget-QuickWins-InstallSoftware.bat -o wingetscript.bat && wingetscript.bat  
+cd %USERPROFILE% && curl https://raw.githubusercontent.com/JCab3X/quick-wins-setup/main/Winget-QuickWins-InstallSoftware.bat -o wingetscript.bat && wingetscript.bat && git clone https://github.com/JCab3X/quick-wins-setup.git  
 ```  
- To use it, open cmd as an administrator and paste it, it will change directory to your user's home direcotry, download the script and execute it.
+ To use it, open cmd as an administrator and paste it, it will change directory to your user's home directory, download the script and execute it.
 
 To tweak the software you want to install, open the script with *notepad.exe* (or any other text editor), and remove the two colons `::` in front of software lines that you want to install and save the file. If you want to look for additional software id's an easy way is using https://winstall.app/ but you may also use `winget search "Name of your software"`
 
@@ -35,8 +35,9 @@ Once your list of desired software is ready, you can open the script as an admin
 
 Open *PowerShell* as an administrator (right click - Run as administrator).
 
-> **Here is a one-liner** to download and install *chocolatey* and its GUI, and then install only *winget* and *git*  
-``` Powershell Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')); cd ~; Invoke-WebRequest -Uri "https://raw.githubusercontent.com/JCab3X/quick-wins-setup/main/Chocolatey-QuickWins-InstallSoftware.bat" -OutFile chocolateyscript.bat; .\chocolateyscript.bat   
+> **Here is a one-liner** to download and install *chocolatey* and its GUI, then install only *winget* and *git* through chocolatey, and clone this repository: 
+``` Powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')); cd ~; Invoke-WebRequest -Uri "https://raw.githubusercontent.com/JCab3X/quick-wins-setup/main/Chocolatey-QuickWins-InstallSoftware.bat" -OutFile chocolateyscript.bat; .\chocolateyscript.bat; git clone https://github.com/JCab3X/quick-wins-setup.git
 ```  
   To use it, open powershell as an administrator and paste it, it will first install chocolatey and its GUI, then change directory to your user's home directory, download the script and execute it.
 
