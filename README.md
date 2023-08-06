@@ -19,7 +19,7 @@ If your system has winget installed you can directly use the script "Winget-Quic
 
 > **Here is a one-liner** to download and install only *chocolatey* and *git*, and to clone this repository
 ```Batch  
-cd %USERPROFILE% && curl https://raw.githubusercontent.com/JCab3X/quick-wins-setup/main/Winget-QuickWins-InstallSoftware.bat -o wingetscript.bat && wingetscript.bat && git clone https://github.com/JCab3X/quick-wins-setup.git  
+cd %USERPROFILE% && curl https://raw.githubusercontent.com/JCab3X/quick-wins-setup/main/Winget-QuickWins-InstallSoftware.bat -o wingetscript.bat && wingetscript.bat && refreshenv && git clone https://github.com/JCab3X/quick-wins-setup.git  
 ```  
  To use it, open cmd as an administrator and paste it, it will change directory to your user's home directory, download the script and execute it.
 
@@ -37,7 +37,7 @@ Open *PowerShell* as an administrator (right click - Run as administrator).
 
 > **Here is a one-liner** to download and install *chocolatey* and its GUI, then install only *winget* and *git* through chocolatey, and clone this repository: 
 ``` Powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')); cd ~; Invoke-WebRequest -Uri "https://raw.githubusercontent.com/JCab3X/quick-wins-setup/main/Chocolatey-QuickWins-InstallSoftware.bat" -OutFile chocolateyscript.bat; .\chocolateyscript.bat; git clone https://github.com/JCab3X/quick-wins-setup.git
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')); cd ~; Invoke-WebRequest -Uri "https://raw.githubusercontent.com/JCab3X/quick-wins-setup/main/Chocolatey-QuickWins-InstallSoftware.bat" -OutFile chocolateyscript.bat; .\chocolateyscript.bat;  $Env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine"); git clone https://github.com/JCab3X/quick-wins-setup.git
 ```  
   To use it, open powershell as an administrator and paste it, it will first install chocolatey and its GUI, then change directory to your user's home directory, download the script and execute it.
 
