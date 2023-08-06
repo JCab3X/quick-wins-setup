@@ -11,7 +11,6 @@
 :: :: Utilities
 :: winget install --accept-source-agreements --accept-package-agreements --id=Chocolatey.Chocolatey  -e 
 :: winget install --accept-source-agreements --accept-package-agreements --id=Microsoft.PowerToys -e 
-:: winget install --accept-source-agreements --accept-package-agreements --id=Wintoys -e 
 :: winget install --accept-source-agreements --accept-package-agreements --id=Wox.Wox -e 
 :: winget install --accept-source-agreements --accept-package-agreements --id=voidtools.Everything -e 
 :: winget install --accept-source-agreements --accept-package-agreements --id=Giorgiotani.Peazip -e 

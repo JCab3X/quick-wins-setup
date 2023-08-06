@@ -13,7 +13,7 @@ choco install -y chocolateygui
 :: choco install -y nomachine
 
 :: :: Utilities
-choco install winget-cli
+choco install -y winget-cli
 :: choco install -y powertoys
 :: choco install -y Everything
 :: choco install -y wox
@@ -47,6 +47,6 @@ choco install winget-cli
 :: :: Development tools - for Python, double check the version you need
 :: choco install -y python3
 :: choco install -y vscode
- choco install git
+ choco install -y git
 
 
